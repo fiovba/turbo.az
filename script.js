@@ -119,7 +119,7 @@ function printCards() {
                 <i class="fa fa-star text-gray-200"></i>
               </div>
             </div>
-            <div class="flex items-center justify-between text-sm sm:text-2xl">
+            <div class="flex items-center justify-between text-[15px] sm:text-xl">
               <span class=" font-bold text-black">${data[i].price} ${data[i].currency}</span>
             </div>
           </div>
