@@ -201,8 +201,8 @@ function filterCards() {
           </a>
           <div class="px-5 pb-5 flex flex-col justify-between flex-grow">
             <a href="#">
-              <h3 class="text-xl font-semibold tracking-tight text-gray-900">${item.brand}</h3>
-              <h4 class="text-md font-semibold tracking-tight text-gray-700">${item.model}</h4>
+              <h3 class="text-sm sm:text-xl font-semibold tracking-tight text-gray-900">${item.brand}</h3>
+              <h4 class="text-[15]px sm:text-md font-semibold tracking-tight text-gray-700">${item.model}</h4>
               <h4>${item.banType} ${item.odometer} ${item.odometerUnit} </h4>
               <h5 class="text-gray-500">${item.dates}</h5>
             </a>
@@ -216,7 +216,7 @@ function filterCards() {
               </div>
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-black">${item.price} ${item.currency}</span>
+              <span class=" text-sm sm:text-2xl font-bold text-black">${item.price} ${item.currency}</span>
             </div>
           </div>
         </div>`;
