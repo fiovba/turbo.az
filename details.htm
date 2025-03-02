@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="w-full bg-[#f6f7fa]">
+        <div
+            class="container mx-auto max-w-7xl flex justify-center sm:justify-between flex-wrap items-center p-5 text-neutral-400">
+            <div class="flex gap-2 sm:gap-5 ">
+                <div class="hover:text-red-600"><a href="">Tap.az</a></div>
+                <div class="hover:text-red-600"><a href="">Bina.az</a></div>
+                <div class="hover:text-red-600"><a href="">Boss.az</a></div>
+            </div>
+            <div class="flex gap-2 flex-wrap">
+                <div class="hover:text-red-600">Dəstək: (012) 526-47-47</div>
+                <div class="hover:text-red-600">Yardım</div>
+                <div class="hover:text-red-600">RU</div>
+                <div onclick="toggleSlideover()" class="hover:text-red-600">
+                    <i class="fa-solid fa-heart"></i> Seçilmişlər
+                </div>
+                <div class="hover:text-red-600"><i class="fa-solid fa-user"></i> Giriş</div>
+            </div>
+        </div>
+        <div class="flex items-center justify-center">
+            <div id="slideover-container" class="w-full fixed z-50 inset-0 invisible">
+                <div onclick="toggleSlideover()" id="slideover-bg"
+                    class=" w-full h-full duration-500 ease-out transition-all inset-0 absolute "></div>
+                <div id="slideover"
+                    class="w-96  bg-white h-full absolute right-0 duration-300 ease-out transition-all translate-x-full">
+                    <h2 class="text-[#ca1016] font-bold tetx-xl p-6">  <i class="fa-solid fa-heart"></i> SEÇİLMİŞLƏR</h2>
+                    <div onclick="toggleSlideover()"
+                        class="absolute cursor-pointer  text-gray-600 top-0 w-8 h-8 flex items-center justify-center right-0 mt-5 mr-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+
+                    </div>
+                    <div class="p-10 max-h-screen overflow-y-auto scrollbar ">
+                        <ul id="favorite" class="flex flex-col divide-y dark:divide-gray-300">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <nav class="w-full bg-[#ca1016]">
+        <div class="container mx-auto max-w-7xl  py-2 px-3 text-white">
+            <div class="flex justify-between items-center flex-wrap">
+                <h1 class="font-bold text-2xl sm:text-3xl"><a href="index.htm">TURBO.AZ</a></h1>
+                <div class="flex flex-wrap gap-5 text-center">
+
+                    <div><a href="#">Bütün Elanlar</a></div>
+                    <div><a href="#">Dilerlər</a></div>
+                    <div><a href="#">Avtokataloq</a></div>
+                    <div><a href="#">Moto</a></div>
+
+                    <div>
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                            class="text-white text-center inline-flex items-center" type="button">Ehtiyat Hissələr və
+                            aksesuarlar</button>
+                        <div id="dropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                            <ul class="py-2 bg-amber-50 text-black rounded-md shadow-xl"
+                                aria-labelledby="dropdownDefaultButton">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Aksesuarlar</a>
+                                </li>
+                                <li> <a href="#" class="block px-4 py-2 hover:bg-gray-100">Audio
+                                        və Video Texnika</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Avtokosmetika
+                                        və Avtokimya</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Ehtiyat
+                                        Hissələr</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">GPS
+                                        Naviqatorlar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown2"
+                            class="text-white text-center inline-flex items-center" type="button">İcarə</button>
+                        <div id="dropdown2"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                            <ul class="py-2 bg-amber-50 text-black rounded-md shadow-xl"
+                                aria-labelledby="dropdownDefaultButton">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Aksesuarlar</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Audio
+                                        və Video Texnika</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Avtokosmetika
+                                        və Avtokimya</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 ">Ehtiyat
+                                        Hissələr</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">GPS
+                                        Naviqatorlar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="pt-5 sm:pt-0">
+                    <button class="bg-lime-400 p-2 rounded-sm">
+                        <i class="fa-regular fa-square-plus"></i> Yeni elan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="detailsContainer" class="container mx-auto max-w-7xl"></div>
+    </main>
+
+    <footer class="bg-[#f1f3f7] ">
+        
+        <div class="container mx-auto max-w-7xl " id="footer">
+          
+            <div class="flex justify-between text-sm sm:text-lg p-5 ">
+                <div class="hover:text-red-800 text-[#393838] ">Reklam Yerlesdirin</div>
+                <div class="gap-3 flex ">
+                    <div class="hover:text-red-800 text-[#393838] "><i class="fa-brands fa-facebook-f "></i> </div>
+                    <div class="text-[#393838]"><i class="fa-brands fa-instagram hover:text-red-800"></i> </div>
+                    <div class="text-[#393838] hover:text-red-800 tracking-tight ">
+                        <i class="fa-solid fa-envelope"></i> turbo@turbo.az
+                    </div>
+
+                    <div class=" text-[#393838] hover:text-red-800 tracking-tight">
+                        <i class="fa-solid fa-phone"></i> (012) 526-47-47
+                    </div>
+                </div>
+            </div>
+              <hr class="line w-full" />
+            <div  id="footerNav" class="flex gap-5 p-5">
+                <div><a href="#">Qaydalar</a></div>
+                <div><a href="#">Qanun</a></div>
+                <div><a href="#">İstifadəçi Razılaşması</a></div>
+                <div><a href="#">Məxfiliq siyasəti</a></div>
+                <div><a href="#">Sifarişli avtomobil alan alıcı üçün tövsiyələr</a></div>
+                <div><a href="#">Reklam Yerləşdirin</a></div>
+            </div>
+        </div>
+        <div id="footerpart2" class="bg-[#ca1016] w-full  text-white">
+          <div class="container mx-auto max-w-7xl flex justify-around gap-7 p-5">
+            <div class="w-[50%]">Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş elanların məzmununa görə məsuliyyət daşımır.</div>
+            <div class="w-[50%]">
+                <span>2006-2025 Digital Classifieds MMC. VÖEN: 1405631661</span>
+                <span>Mobil Versiya</span>
+            </div>
+
+          </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+        const detailsContainer = document.getElementById('detailsContainer')
+        const url = window.location.search
+        const params = new URLSearchParams(url)
+        const id = params.get('id')
+        const obj = data.find(item=> item.id == id )
+        detailsContainer.innerHTML += `<section class="py-12 bg-white md:py-16">
+  <div class="px-4 container mx-auto max-w-7xl ">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+      <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
+        <img class="w-full " src="${obj.images}" alt="" />
+      </div>
+
+      <div class="mt-6 sm:mt-8 lg:mt-0">
+        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl">
+          ${obj.brand}, ${obj.model}, ${obj.year}
+        </h1>
+        <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
+          <p class="text-2xl font-bold text-gray-900 sm:text-3xl pr-4">
+            ${obj.price} ${obj.currency}
+          </p>
+
+          <div class="flex items-center gap-4 mt-2 sm:mt-0">
+            <div class="flex items-center gap-1">
+              <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+              </svg>
+              <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+              </svg>
+            </div>
+            <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">
+              (5.0)
+            </p>
+            <a href="#" class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white">
+              345 Reviews
+            </a>
+          </div>
+        </div>
+
+        <hr class="my-6 md:my-8 border-gray-500" />
+
+        <p class="mb-6 text-gray-700">
+          ${obj.brand}, ${obj.model}, ${obj.year}, ${obj.city}, ${obj.banType}, ${obj.odometer} ${obj.odometerUnit}<br />
+          <strong>Engine Capacity:</strong> ${obj.engine}<br />
+        </p>
+      </div>
+    </div>
+  </div>
+</section>`;
+    </script>
+</body>
+
+</html>
