@@ -230,7 +230,7 @@ function toggleSlideover() {
 }
 
 function showDetails(id) {
-    window.location.href = `http://127.0.0.1:5500/details.htm?id=${id}`
+    window.location.href = `https://turbo-az-green.vercel.app/details.htm?id=${id}`
    
 }
 
